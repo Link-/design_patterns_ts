@@ -1,0 +1,11 @@
+"use strict";
+exports.__esModule = true;
+var observer_1 = require("./observer");
+var observerObjA = new observer_1.ConcreteObserver("ObjectA");
+var observerObjB = new observer_1.ConcreteObserver("ObjectB");
+var dispatcher = new observer_1.ConcreteSubject();
+dispatcher.registerObserver(observerObjA);
+dispatcher.registerObserver(observerObjB);
+dispatcher.setData("This message should be shared by both observers");
+dispatcher.removeObserver(observerObjB);
+dispatcher.setData("This message should be shared by only 1 observer");
