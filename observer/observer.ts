@@ -54,7 +54,7 @@ export class ConcreteObserver implements Observer {
    * @param {String} data
    * @memberof ConcreteObserver
    */
-  update(data: String) {
+  public update(data: String) {
     console.log(`${this.id}: ${data}`);
   }
 }
