@@ -135,6 +135,14 @@ exports.HawaianPizza = HawaianPizza;
 var SimplePizzaFactory = /** @class */ (function () {
     function SimplePizzaFactory() {
     }
+    /**
+     * Static method that creates instances of the different types of Pizzas
+     *
+     * @static
+     * @param {String} type
+     * @returns {Pizza}
+     * @memberof SimplePizzaFactory
+     */
     SimplePizzaFactory.createPizza = function (type) {
         switch (type) {
             case 'cheese':

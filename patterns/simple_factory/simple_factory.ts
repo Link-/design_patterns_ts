@@ -109,6 +109,14 @@ export class HawaianPizza extends Pizza {
  * @class SimplePizzaFactory
  */
 export class SimplePizzaFactory {
+  /**
+   * Static method that creates instances of the different types of Pizzas
+   *
+   * @static
+   * @param {String} type
+   * @returns {Pizza}
+   * @memberof SimplePizzaFactory
+   */
   static createPizza(type: String): Pizza {
     switch(type) {
       case 'cheese':
