@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 /**
- *
+ * Concrete Color Component
  *
  * @export
  * @class BaseColor
@@ -21,7 +21,7 @@ var BaseColor = /** @class */ (function () {
 }());
 exports.BaseColor = BaseColor;
 /**
- *
+ * Color Decorator
  *
  * @export
  * @class Black
@@ -42,7 +42,7 @@ var Blue = /** @class */ (function () {
 }());
 exports.Blue = Blue;
 /**
- *
+ * Color Decorator
  *
  * @export
  * @class White
@@ -63,7 +63,7 @@ var White = /** @class */ (function () {
 }());
 exports.White = White;
 /**
- *
+ * Color Decorator
  *
  * @export
  * @class Green
@@ -84,7 +84,7 @@ var Green = /** @class */ (function () {
 }());
 exports.Green = Green;
 /**
- *
+ * Color Decorator
  *
  * @export
  * @class Red
