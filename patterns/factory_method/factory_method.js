@@ -220,7 +220,7 @@ var NYCPizzaStore = /** @class */ (function (_super) {
                 return new NYCVeggiePizza();
                 break;
             default:
-                throw new Error("Pizza type not available: " + type);
+                throw new Error('Pizza type not available');
         }
     };
     return NYCPizzaStore;
@@ -254,7 +254,7 @@ var ChicagoPizzaStore = /** @class */ (function (_super) {
                 return new ChicagoVeggiePizza();
                 break;
             default:
-                throw new Error('Pizza type not available' + type);
+                throw new Error('Pizza type not available');
         }
     };
     return ChicagoPizzaStore;
