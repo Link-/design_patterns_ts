@@ -13,24 +13,52 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+/**
+ * Ingredient
+ *
+ * @export
+ * @abstract
+ * @class Dough
+ */
 var Dough = /** @class */ (function () {
     function Dough() {
     }
     return Dough;
 }());
 exports.Dough = Dough;
+/**
+ * Ingredient
+ *
+ * @export
+ * @abstract
+ * @class Cheese
+ */
 var Cheese = /** @class */ (function () {
     function Cheese() {
     }
     return Cheese;
 }());
 exports.Cheese = Cheese;
+/**
+ * Ingredient
+ *
+ * @export
+ * @abstract
+ * @class Sauce
+ */
 var Sauce = /** @class */ (function () {
     function Sauce() {
     }
     return Sauce;
 }());
 exports.Sauce = Sauce;
+/**
+ * Concrete Ingredient Class
+ *
+ * @export
+ * @class MozarellaCheese
+ * @extends {Cheese}
+ */
 var MozarellaCheese = /** @class */ (function (_super) {
     __extends(MozarellaCheese, _super);
     function MozarellaCheese() {
@@ -41,6 +69,13 @@ var MozarellaCheese = /** @class */ (function (_super) {
     return MozarellaCheese;
 }(Cheese));
 exports.MozarellaCheese = MozarellaCheese;
+/**
+ * Concrete Ingredient Class
+ *
+ * @export
+ * @class ReggianoCheese
+ * @extends {Cheese}
+ */
 var ReggianoCheese = /** @class */ (function (_super) {
     __extends(ReggianoCheese, _super);
     function ReggianoCheese() {
@@ -51,6 +86,13 @@ var ReggianoCheese = /** @class */ (function (_super) {
     return ReggianoCheese;
 }(Cheese));
 exports.ReggianoCheese = ReggianoCheese;
+/**
+ * Concrete Ingredient Class
+ *
+ * @export
+ * @class PlumTomatoSauce
+ * @extends {Sauce}
+ */
 var PlumTomatoSauce = /** @class */ (function (_super) {
     __extends(PlumTomatoSauce, _super);
     function PlumTomatoSauce() {
@@ -61,6 +103,13 @@ var PlumTomatoSauce = /** @class */ (function (_super) {
     return PlumTomatoSauce;
 }(Sauce));
 exports.PlumTomatoSauce = PlumTomatoSauce;
+/**
+ * Concrete Ingredient Class
+ *
+ * @export
+ * @class MarinaraSauce
+ * @extends {Sauce}
+ */
 var MarinaraSauce = /** @class */ (function (_super) {
     __extends(MarinaraSauce, _super);
     function MarinaraSauce() {
@@ -71,6 +120,13 @@ var MarinaraSauce = /** @class */ (function (_super) {
     return MarinaraSauce;
 }(Sauce));
 exports.MarinaraSauce = MarinaraSauce;
+/**
+ * Concrete Ingredient Class
+ *
+ * @export
+ * @class ThickCrustDough
+ * @extends {Dough}
+ */
 var ThickCrustDough = /** @class */ (function (_super) {
     __extends(ThickCrustDough, _super);
     function ThickCrustDough() {
@@ -81,6 +137,13 @@ var ThickCrustDough = /** @class */ (function (_super) {
     return ThickCrustDough;
 }(Dough));
 exports.ThickCrustDough = ThickCrustDough;
+/**
+ * Concrete Ingredient Class
+ *
+ * @export
+ * @class ThinCrustDough
+ * @extends {Dough}
+ */
 var ThinCrustDough = /** @class */ (function (_super) {
     __extends(ThinCrustDough, _super);
     function ThinCrustDough() {
@@ -91,6 +154,13 @@ var ThinCrustDough = /** @class */ (function (_super) {
     return ThinCrustDough;
 }(Dough));
 exports.ThinCrustDough = ThinCrustDough;
+/**
+ * Concrete NYC Ingredient Factory
+ *
+ * @export
+ * @class NYPizzaIngredientFactory
+ * @implements {IngredientFactory}
+ */
 var NYPizzaIngredientFactory = /** @class */ (function () {
     function NYPizzaIngredientFactory() {
     }
@@ -106,6 +176,13 @@ var NYPizzaIngredientFactory = /** @class */ (function () {
     return NYPizzaIngredientFactory;
 }());
 exports.NYPizzaIngredientFactory = NYPizzaIngredientFactory;
+/**
+ * Concrete Chicago Ingredient Factory
+ *
+ * @export
+ * @class ChicagoIngredientFactory
+ * @implements {IngredientFactory}
+ */
 var ChicagoIngredientFactory = /** @class */ (function () {
     function ChicagoIngredientFactory() {
     }
@@ -121,9 +198,19 @@ var ChicagoIngredientFactory = /** @class */ (function () {
     return ChicagoIngredientFactory;
 }());
 exports.ChicagoIngredientFactory = ChicagoIngredientFactory;
+/**
+ * @export
+ * @abstract
+ * @class Pizza
+ */
 var Pizza = /** @class */ (function () {
     function Pizza() {
     }
+    /**
+     * Use the Ingredients Factory to create the items
+     *
+     * @memberof Pizza
+     */
     Pizza.prototype.prepare = function () {
         this.dough = this.ingredientsFactory.createCheese();
         this.cheese = this.ingredientsFactory.createDough();
@@ -141,6 +228,13 @@ var Pizza = /** @class */ (function () {
     return Pizza;
 }());
 exports.Pizza = Pizza;
+/**
+ * Concrete Cheese Pizza
+ *
+ * @export
+ * @class CheesePizza
+ * @extends {Pizza}
+ */
 var CheesePizza = /** @class */ (function (_super) {
     __extends(CheesePizza, _super);
     function CheesePizza(ingredientsFactory) {
@@ -153,6 +247,13 @@ var CheesePizza = /** @class */ (function (_super) {
     return CheesePizza;
 }(Pizza));
 exports.CheesePizza = CheesePizza;
+/**
+ * Concrete Pepperoni Pizza
+ *
+ * @export
+ * @class PepperoniPizza
+ * @extends {Pizza}
+ */
 var PepperoniPizza = /** @class */ (function (_super) {
     __extends(PepperoniPizza, _super);
     function PepperoniPizza(ingredientsFactory) {
@@ -165,6 +266,13 @@ var PepperoniPizza = /** @class */ (function (_super) {
     return PepperoniPizza;
 }(Pizza));
 exports.PepperoniPizza = PepperoniPizza;
+/**
+ *
+ *
+ * @export
+ * @abstract
+ * @class PizzaStore
+ */
 var PizzaStore = /** @class */ (function () {
     function PizzaStore() {
     }
@@ -197,6 +305,13 @@ var PizzaStore = /** @class */ (function () {
     return PizzaStore;
 }());
 exports.PizzaStore = PizzaStore;
+/**
+ *
+ *
+ * @export
+ * @class NYCPizzaStore
+ * @extends {PizzaStore}
+ */
 var NYCPizzaStore = /** @class */ (function (_super) {
     __extends(NYCPizzaStore, _super);
     function NYCPizzaStore() {
@@ -207,6 +322,13 @@ var NYCPizzaStore = /** @class */ (function (_super) {
     return NYCPizzaStore;
 }(PizzaStore));
 exports.NYCPizzaStore = NYCPizzaStore;
+/**
+ *
+ *
+ * @export
+ * @class ChicagoPizzaStore
+ * @extends {PizzaStore}
+ */
 var ChicagoPizzaStore = /** @class */ (function (_super) {
     __extends(ChicagoPizzaStore, _super);
     function ChicagoPizzaStore() {
